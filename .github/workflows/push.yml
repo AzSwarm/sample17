@@ -17,6 +17,7 @@ jobs:
       - name: Any Name Bash Test Step
         shell: bash
         run: |
-          echo "SECRET_NAME: $SECRET_NAME"
+          echo "$SECRET_NAME" > data.txt
+          cat data.txt
         env:
           SECRET_NAME: ${{ secrets.SECRET_NAME }}
