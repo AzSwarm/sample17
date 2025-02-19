@@ -1,0 +1,22 @@
+name: Dev
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  BUILD_TYPE: core
+  DEFAULT_PYTHON: 3.8
+
+jobs:
+  any_name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Any Name Bash Test Step
+        shell: bash
+        run: |
+          echo "SECRET_NAME: $SECRET_NAME"
+        env:
+          SECRET_NAME: ${{ secrets.SECRET_NAME }}
